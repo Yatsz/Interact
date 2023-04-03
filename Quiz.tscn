@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="Quiz" type="Node2D"]
+
+[node name="QuizBg" type="TextureRect" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0

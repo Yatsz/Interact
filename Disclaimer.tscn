@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://VT323-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Disclaimer.gd" type="Script" id=2]
+
+[sub_resource type="ImageTexture" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 1 )
+
+[node name="Disclaimer" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+texture = SubResource( 1 )
+expand = true
+
+[node name="DisclaimerText" type="Label" parent="."]
+margin_left = 24.0
+margin_top = 8.0
+margin_right = 304.0
+margin_bottom = 163.0
+custom_fonts/font = SubResource( 2 )
+text = "Disclaimer:
+This game is NOT meant to diagnose you, as we are not medical professionals. This is only meant to be a general guideline, and users should seek professional advice before making any decisions."
+autowrap = true
+
+[node name="ClickToProceed" type="Label" parent="."]
+margin_left = 192.0
+margin_top = 160.0
+margin_right = 312.0
+margin_bottom = 177.0
+custom_fonts/font = SubResource( 3 )
+text = "Click to Proceed ->"
+
+[connection signal="gui_input" from="TextureRect" to="." method="_on_TextureRect_gui_input"]
